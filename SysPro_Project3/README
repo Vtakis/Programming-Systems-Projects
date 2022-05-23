@@ -1,0 +1,53 @@
+PROGRAMMATISMOS SUSTHMATOS - Κ24
+PROJECT 3
+
+ONOMA: PANAGIOTIS
+EPWNΥMO: VLASSIS
+Α.Μ.: 1115201400022
+
+/////////////////////////
+//1o meros - WebCreator//
+/////////////////////////
+
+>>Arxeia: webcreator.sh
+>>Ektelesh: ./webcreator.sh root text_file <numSites> <numPages>
+
+>>	Mesw autou tou bash script ginetai h dhmiourgia tuxaiwn <numSites> websites me <numPages> pages to ka8e website.
+
+		Sthn arxh exoume elegxo gia ta orismata, elegxo an exoume oriakes times twn <numSites> kai <numPages>, wste na
+	ginei katallhlh allagh ston ari8mo twn links pou borei na exei to ka8e page kai apo8hkeuontai ta onomata twn pages se
+	enan pinaka, wste na xrhsimopoih8oun sth sunexeia kata thn dhmiourgia twn pages.
+
+		Epeita exoume thn dhmiourgia ka8e page me vash ta zhtoumena ths ergasias kai sto telos ginetai elegxos an ka8e page exei
+	toulaxiston ena incoming link. Se periptwsh pou uparxei kapoio/-a page(s) xwris incoming link, emfanizetai mhnuma me ton
+	ari8mo twn pages pou exoun telika toulaxiston ena incoming link.
+	
+
+////////////////////////
+//2o meros - WebServer//
+////////////////////////
+
+>>Arxeia: myhttpd.c webserver.c webserver.h
+>>Ektelesh: ./myhttpd -p <servingPort> -c <commandPort> -t <numThreads> -d root_dir
+
+>>	Se auto to meros ths ergasias exoume th dhmiourgia enos webserver.
+
+		Sthn arxh exoume elegxo an do8hkan swsta orismata sthn ektelesh tou programmatos, exoume th dhmiourgia twn threads
+	pou einai upeu8hna gia diekperaiwsh get requests, ka8ws kai thn dhmiourgia twn 2 servers (mesw ths sunarthshs CreateServer), 
+	pou ka8enas apo autous 8a akouei se ena apo ta ports pou do8hkan. Ta threads perimenoun mexri na vre8ei kapoio stoixeio ston buffer.
+
+		Gia na gnwrizoume pote uparxei sundesh se kapoio apo ta 2 ports xrhsimopoioume th sunarthsh <<poll>>. Otan exoume sundesh sto
+	servingPort, ginetai eisagwgh tou fd pou prokuptei apo thn accept mesa se enan buffer apo ton opoio diavazoun ta threads, kai ginetai
+	ektelesh tou "get request" apo kapoio thread mesw ths sunarthshs RespondRequest. Se periptwsh pou exoume activity sto commandPort,
+	perimenoume ws epitrepti eisodo mono tis lekseis "STATS" kai "SHUTDOWN", oi opoies entoles ekteloun auta pou zhtaei h ergasia.
+
+		Sth sunarthsh RespondRequest (sto arxeio webserver.c) ginetai diavasma tou GET Request kai elegxos an einai swsto. Analoga me
+	ta dikaiwmata tou arxeiou kai an uparxei h oxi to arxeio sto root_directory, epistrefetai mia antistoixh apanthsh.
+
+		8ewroume ws megisto ari8mo stoixeiwn ston buffer 50. An exei gemisei o buffer, tote, prin ginei eisagwgh allou GET request ston
+	buffer, perimenoume mexri na lavoume shma pws den einai gematos o buffer.
+
+		Kata thn ektelesh twn threads ginetai elegxos an exei do8ei sto commandPort h entolh "SHUTDOWN". Sth periptwsh pou exei do8ei,
+	ginetai termatismos olwn twn threads, afou prwta exei adeiasei o buffer.
+
+

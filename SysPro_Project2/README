@@ -1,0 +1,55 @@
+
+PROGRAMMATISMOS SUSTHMATOS - Κ24
+PROJECT 2
+
+ONOMA: PANAGIOTIS
+EPWNΥMO: VLASSIS
+Α.Μ.: 1115201400022
+
+Arxeia: jobExecutor.c, jobExecFunctions.c, workers.c, WorkerFunctions.c, Makefile
+
+
+---Metagglwthsh tou arxeiou me vash to Makefile---
+
+---Ektelesh ./jobExecutor -w <N> -d docfile
+			./jobExecutor -d docfile -w <N>
+			./jobExecutor -d docfile (me default workers = 5 )
+
+
+	Exei ginei dhmiourgia olwn twn zhtoumenwn entolwn
+
+	Arxika, ginetai diavasma tou ari8mou twn directories pou vriskontai sto docfile. An ta directories einai ligotera apo tous workers, xrhsimopoiountai tosoi workers osa einai ta directories. Afou ginei autos o elegxos, dhmiourgountai ta FIFOs kai oi workers me sunduasmo fork + execv sto programma ./workers me ta antistoixa arguments.
+
+	O jobExecutor stelnei mesw twn pipes ta directories pou antistoixoun ston ka8e worker, o opoios anoigei ta arxeia pou uparxoun mesa se auta ta directories kai krataei kapoies plhrofories pou xrhsimeoun stis entoles pou dinontai argotera apo ton jobExecutor. Otan teleiwsei auth auto diavasma, o jobExecutor perimenenei entolh apo ton xrhsth.
+
+	Analoga me thn entolh pou do8ei apo ton xrhsth 8a emfanistei to antistoixo apotelesma. H ka8e entolh dinetai ston ka8e worker kai autos epistefei kapoia apotelesmata kai katagrafei oles tis energeies sxetika me keywords kai strings se antistoixo arxeio ./log/worker_<pid>.
+
+//search
+	An de do8ei kapoio deadline (dhladh den uparxei sthn entolh to -d <deadline>), dinetai ws default deadline 2 secs. An de prolavei mesa sto deadline na vrei apotelesmata entos deadline o worker, epistrefetai ston jobExecutor h leksh "slow", me thn opoia auth leksh katalavainei pws de prepei na emfanisei apotelesmata apo auton ton worker. Ean einai entos tou deadline, epistrefei ena arxeio ston jobExecutor, to opoio anoigei kai ektupwnei ta periexomena tou. Aneksartita an prolavei to deadline, o worker katagrafei thn energeia sto log arxeio tou. Episis, ektupwnetai meta thn emfanisi twn apotelesmatwn, posoi workers vrikan apotelesmata h toulaxiston apanthsan entos deadline.
+
+//maxcount - mincount
+	Emfanizetai to path. An den uparxei to keyword, emfanizetai mhnuma oti kanenas workerde vrike to dw8en keyword.
+
+//wc
+	Ektupwnontai ta zhtoumena statistika.
+
+//exit
+	Ginetai exit twn workers kai ektupwnontai posa strings vrike meta apo ekteleseis search/maxcount/mincount.
+
+/-----------------------------------------------------------------------------------------------------------------------------------/
+
+###Sxetika me ton Worker###
+
+	O worker krataei se mia domh WorkerFilesIndex plhrofories sxetika me ka8e file pou exei sthn katoxh tou kai epeksergazetai (ka8e grammh string tou keimenou tou file, ton ari8mo twn grammwn tou file, ton ari8mo leksewn kai ton ari8mo twn bytes pou exei to file)
+
+	O ka8e worker apo8hkeuei, episis, se ena Trie ka8emia leksh. Sto telos ka8e lekshs, uparxei ena PostIndex pou exei PostingLists. Ka8e PostList periexei periexei to filename pou vrisketai h leksh, poses fores uparxei h leksh se auto to filename, ka8ws kai mia lista me tous ari8mous twn grammwn pou vrisketai h leksh mesa sto filename.
+
+
+
+
+
+
+
+
+
+

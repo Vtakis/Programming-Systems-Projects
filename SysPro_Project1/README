@@ -1,0 +1,49 @@
+
+PROGRAMMATISMOS SUSTHMATOS - Κ24
+PROJECT 1
+
+ONOMA: PANAGIOTIS
+EPWNΥMO: VLASSIS
+Α.Μ.: 1115201400022
+
+Arxeia: main.c, minisearch.c, heap.c (antistoixa .h arxeia), Makefile
+
+(Ta heap arxeia aforoun thn domh tou MaxHeap kai tis sunartiseis tou)
+
+---Metagglwthsh tou arxeiou me vash to Makefile---
+
+---Ektelesh ./minisearch -k <N> -i docfile----
+
+
+	Exei ginei dhmiourgia olwn twn zhtoumenwn sunarthsewn ektos apo ena kommati ths search (thn upogrammish tou keimenou).
+
+//Sxetika me to Trie
+
+	H domh Trie periexei ena gramma, enan geitona typou Trie kai ena paidi typou Trie (geitonas=LetterCurLvl),(paidi=LetterNextLvl), ka8ws kai mia domh typou PostingIndex, h opoia periexei ta Posting lists. Gia na vroume to post list mias leksis, exetazoume an to PostingIndex einai mh keno kai phgainoume apo ekei sto antistoixo Posting List.
+
+	H riza tou Trie periexei ton xaraktira '\0'
+
+
+//Dhmiourgia index
+	
+	Ginetai ena 1o diavasma leksi pros leksi gia thn euresh twn grammwn tou do8entos arxeiou ka8ws kai gia to mhkos ths megaluterhs leksis kai ton ari8mo twn perissoterwn leksewn se ena keimeno, ta opoia 8a xrhsimopoih8oun sth sunexeia gia thn dhmiourgia twn domwn tou Trie kai DocMap.
+	
+	Epeita, exoume ksana diavasma tou arxeio ana grammi, kai ginetai eisagwgh twn leksewn sto Trie kai enhmerwsh twn stoixeiwn tou DocMap.
+Me to telos tou diavasmatos tou arxeiou, exoume pleon teleiwsei me thn dhmiourgia twn vasikwn domwn pou 8a xreiastoume.
+
+//Sxetika me th sunartisi Search
+
+	Ypologizetai to score tou keimenou gia tis lekseis pou do8ikan apo ton xrhsth. Gia thn euresi twn top-k keimenwn me vash to score, exei ginei ulopoihsh enos Max-Heap. An kapoio keimeno den periexei kamia apo tis lekseis aytes, to paraleipoume, dhladh de to eisagoume sto MaxHeap.
+	
+	Gia ta top-k keimena, vriskoume arxika tis lekseis tou input pou periexontan sto keimeno kai tis vazoume se mia lista WordList kai sthn sunexeia ektupwnoume ta apotelesmata.
+
+	**Epeidh den exei ulopoih8ei h upogrammisi tou keimenou, to keimeno ektupwnetai xwris morfopoihsh.
+
+//Sxetika me tis sunartiseis df / tf
+
+	Exei ylopoih8ei h zhtoumenh leitourgikothta gia tis sunartiseis df kai tf. Gia to df, otan zhteitai ektupwsh olwn twn leksewn tou Trie, exoume mia anadromiki sunarthsh, enw gia thn anazitisi memenomenis lekshs h pollaplwn leksewn ekteleitai h epanalhptikh sunartisi.
+
+
+
+
+
